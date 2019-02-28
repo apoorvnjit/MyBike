@@ -43,13 +43,18 @@
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This app needs to use location to get the current location</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>This app needs to use location to get the current location when in use</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs to use location to get the current location when in use</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This app needs to use location to get the current location always and in use</string>
 	<key>NSLocationUsageDescription</key>
 	<string>This app needs to use location to get the current location description</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
