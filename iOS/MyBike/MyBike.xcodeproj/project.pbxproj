@@ -15,6 +15,7 @@
 		D50057D8220A3C8100351214 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50057D6220A3C8100351214 /* LaunchScreen.storyboard */; };
 		D50057E3220A3C8100351214 /* MyBikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50057E2220A3C8100351214 /* MyBikeTests.swift */; };
 		D50057EE220A3C8100351214 /* MyBikeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50057ED220A3C8100351214 /* MyBikeUITests.swift */; };
+		D55B045022277725004EF98B /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B044F22277725004EF98B /* CustomPointAnnotation.swift */; };
 		D5D7EAFB221FA7DA0071B5D2 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D7EAFA221FA7DA0071B5D2 /* LocationDetails.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		D50057E9220A3C8100351214 /* MyBikeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyBikeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50057ED220A3C8100351214 /* MyBikeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBikeUITests.swift; sourceTree = "<group>"; };
 		D50057EF220A3C8100351214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D55B044F22277725004EF98B /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		D5D7EAFA221FA7DA0071B5D2 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +91,6 @@
 				32C730727DD54CFF4034FB62 /* Pods-MyBike.debug.xcconfig */,
 				61F266D6718349D31F3BD5D4 /* Pods-MyBike.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -168,6 +169,7 @@
 			children = (
 				D50057D1220A3C8000351214 /* Main.storyboard */,
 				D50057D4220A3C8100351214 /* Assets.xcassets */,
+				D55B044F22277725004EF98B /* CustomPointAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +375,7 @@
 			files = (
 				D5D7EAFB221FA7DA0071B5D2 /* LocationDetails.swift in Sources */,
 				D50057D0220A3C8000351214 /* ViewController.swift in Sources */,
+				D55B045022277725004EF98B /* CustomPointAnnotation.swift in Sources */,
 				D50057CE220A3C8000351214 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,6 @@
+framework module Pods_MyBike {
+  umbrella header "Pods-MyBike-umbrella.h"
+
+  export *
+  module * { export * }
+}

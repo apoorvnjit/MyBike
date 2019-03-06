@@ -21,12 +21,21 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1dr-hv-nDD">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyz-5h-kgd">
+                                <rect key="frame" x="319" y="112" width="40" height="40"/>
+                                <state key="normal" image="locationArrow"/>
+                                <connections>
+                                    <action selector="locateMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VFc-9u-W8F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1dr-hv-nDD" secondAttribute="bottom" id="9tA-au-ugV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1dr-hv-nDD" secondAttribute="trailing" id="BxD-Wa-GNH"/>
                             <constraint firstItem="1dr-hv-nDD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dyw-hK-NVv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dyz-5h-kgd" secondAttribute="trailing" constant="16" id="d4h-FM-qvp"/>
+                            <constraint firstItem="dyz-5h-kgd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="92" id="fc2-U0-ZQf"/>
                             <constraint firstItem="1dr-hv-nDD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vQi-Y0-nJ2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -37,7 +46,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="146"/>
+            <point key="canvasLocation" x="116" y="-108"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="locationArrow" width="40" height="40"/>
+    </resources>
 </document>
