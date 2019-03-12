@@ -6,16 +6,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyBike/Controller/ViewController.swift"
-            timestampString = "573510187.696559"
+            filePath = "MyBike/Model/LocationDetails.swift"
+            timestampString = "573674918.714061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getRegionDetails(urlString:map:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyBike/Model/LocationDetails.swift"
+            timestampString = "573674918.714139"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getRegionDetails(urlString:map:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
