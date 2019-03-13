@@ -48,6 +48,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     var regionType = "restrict"
     var bikeType: Int = 1
     
+    func removeSpecificAnnotation(title: String) {
+        for annotation in self.myMap.annotations {
+            if let title = annotation.title, title == "My Bike" {
+                self.myMap.removeAnnotation(annotation)
+            }
+        }
+    }
+    @IBAction func buttonPark(_ sender: UIButton) {
+        
+        let locValue:CLLocationCoordinate2D = (locationManager.location?.coordinate)!
+        if(!(checkPositioninsidePolygon(listPolygon: listofPolygons, lat: locValue.latitude, long: locValue.longitude))){
+            let alert = UIAlertController(title: "Parked!", message: "Your bike has been parked", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                    
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                    
+                    
+                }}))
+            
+            self.present(alert, animated: true, completion: nil)
+            addAnnotation(coordinate: (locationManager.location?.coordinate)!, title: "My Bike", subtitle: "1")
+            
+        }
+        
+    }
     @IBAction func locateMe(_ sender: Any) {
         if let userLocation = locationManager.location?.coordinate {
             let viewRegion = MKCoordinateRegion(center: userLocation, latitudinalMeters: 200, longitudinalMeters: 200)
@@ -75,6 +107,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.buttonPark(<#T##sender: UIButton##UIButton#>)
         let locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -197,16 +230,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             
         } // end getNotificationSettings
     }
-    func checkPositioninsidePolygon(listPolygon: [MKPolygon], lat: Double, long: Double){
-        
+    func checkPositioninsidePolygon(listPolygon: [MKPolygon], lat: Double, long: Double) -> Bool{
+        var checkInsideArea: Bool = false
         for child in listPolygon{
             let polygonRenderer = MKPolygonRenderer(polygon: child)
             let mapPoint: MKMapPoint = MKMapPoint((CLLocation(latitude: lat, longitude: long)).coordinate)
             //let mapPoint: MKMapPoint = MKMapPoint((CLLocation(latitude: 40.737336, longitude: -74.171002)).coordinate)
             let polygonViewPoint: CGPoint = polygonRenderer.point(for: mapPoint)
             if polygonRenderer.path.contains(polygonViewPoint) {
+                
                 print("Your location was inside your polygon.")
-                showRestrictNotification()
+                //commenting below line but can use this feature in future
+                //showRestrictNotification()
                 
                 let alert = UIAlertController(title: "Restricted area", message: "You are not allowed to park bike in this zone", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
@@ -223,9 +258,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                         
                     }}))
                 self.present(alert, animated: true, completion: nil)
-                
+                checkInsideArea = true
+                return checkInsideArea
             }
         }
+        return checkInsideArea
         
     }
     func checkPositioninsidePermitPolygon(listPolygon: [MKPolygon], lat: Double, long: Double){
@@ -291,10 +328,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         myMap.delegate = self
         myMap.showsUserLocation = true
         myMap.mapType = MKMapType(rawValue: 0)!
-        let locValue:CLLocationCoordinate2D = (manager.location?.coordinate)!
+        //let locValue:CLLocationCoordinate2D = (manager.location?.coordinate)!
         getBikeLocationDetails(urlString: BIKEDETAILS_URL)
-        checkPositioninsidePolygon(listPolygon: listofPolygons, lat: locValue.latitude, long: locValue.longitude)
-        checkPositioninsidePermitPolygon(listPolygon: listofPermitPolygons, lat: locValue.latitude, long: locValue.longitude)
+        //checkPositioninsidePolygon(listPolygon: listofPolygons, lat: locValue.latitude, long: locValue.longitude)
+        //checkPositioninsidePermitPolygon(listPolygon: listofPermitPolygons, lat: locValue.latitude, long: locValue.longitude)
 
     }
     
@@ -356,8 +393,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                             self.listofPermitPolygons.append(self.addPolygon(regions: regiondetail, map: map))
                         }
                         
-                        print(regiondetail)
-                        print("\n")
+                        //print(regiondetail)
+                       // print("\n")
                         r_id+=1
                         regiondetail.removeAll()
                         regiondetail.append(CLLocation(latitude: Double(child.r_lat)!, longitude: Double(child.r_long)!))

@@ -28,17 +28,29 @@
                                     <action selector="locateMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VFc-9u-W8F"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAq-Kk-5vM">
-                                <rect key="frame" x="0.0" y="33" width="70" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAq-Kk-5vM">
+                                <rect key="frame" x="162.5" y="631" width="50" height="30"/>
+                                <color key="backgroundColor" red="0.20059796675592795" green="0.66666668653488159" blue="0.27323916251739211" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="I40-Y7-q9I"/>
+                                    <constraint firstAttribute="width" constant="50" id="sSA-1r-7Es"/>
+                                </constraints>
+                                <state key="normal" title="Park">
+                                    <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPark:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rnt-lh-6oY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fAq-Kk-5vM" secondAttribute="bottom" constant="6" id="4cZ-Py-QFT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1dr-hv-nDD" secondAttribute="bottom" id="9tA-au-ugV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1dr-hv-nDD" secondAttribute="trailing" id="BxD-Wa-GNH"/>
                             <constraint firstItem="1dr-hv-nDD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dyw-hK-NVv"/>
+                            <constraint firstItem="fAq-Kk-5vM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HKI-6y-fcQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dyz-5h-kgd" secondAttribute="trailing" constant="16" id="d4h-FM-qvp"/>
                             <constraint firstItem="dyz-5h-kgd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="92" id="fc2-U0-ZQf"/>
                             <constraint firstItem="1dr-hv-nDD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vQi-Y0-nJ2"/>
@@ -51,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="-108.39580209895054"/>
+            <point key="canvasLocation" x="-47.200000000000003" y="-110.19490254872565"/>
         </scene>
     </scenes>
     <resources>
